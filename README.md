@@ -1,7 +1,7 @@
 # InfoBio.com.br - A Plataforma da Informática Biomédica no Brasil
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/ivolzkm/infobio.com.br/infobio-site/assets/infobioufcspa.jpeg" alt="Logo InfoBio" width="200"/>
+  <img src="https://raw.githubusercontent.com/ivolzkm/infobio.com.br/main/assets/infobioufcspa.jpeg" alt="Logo InfoBio" width="200"/>
 </div>
 
 <p align="center">
