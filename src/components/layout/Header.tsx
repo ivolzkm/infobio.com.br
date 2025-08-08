@@ -1,33 +1,32 @@
 // src/components/layout/Header.tsx
-import Link from "next/link";
+
+import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="bg-slate-800 text-white shadow-md">
-      <nav className="container mx-auto flex items-center justify-between p-4">
-        {/* Lado Esquerdo: Logo */}
-        <div className="text-xl font-bold">
-          <Link href="/" className="text-sky-400 hover:text-sky-300">
-            InfoBio
-          </Link>
-        </div>
+    <header className="sticky top-0 z-50 w-full bg-slate-900/50 backdrop-blur-sm p-4 border-b border-slate-700">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo do Site */}
+        <Link href="/" className="text-2xl font-bold tracking-tight text-white hover:text-sky-400 transition-colors duration-300">
+          InfoBio
+        </Link>
 
-        {/* Lado Direito: Links de Navegação */}
-        <div className="hidden md:flex space-x-6">
-          <Link href="/blog" className="hover:text-sky-400">
+        {/* Menu de Navegação */}
+        <nav className="hidden md:flex items-center space-x-6">
+          <Link href="/blog" className="text-slate-300 hover:text-sky-400 transition-colors duration-300">
             Blog
           </Link>
-          <Link href="/comunidade" className="hover:text-sky-400">
+          <Link href="/comunidade" className="text-slate-300 hover:text-sky-400 transition-colors duration-300">
             Comunidade
           </Link>
-          <Link href="/oportunidades" className="hover:text-sky-400">
+          <Link href="/oportunidades" className="text-slate-300 hover:text-sky-400 transition-colors duration-300">
             Oportunidades
           </Link>
-          <Link href="/sobre" className="hover:text-sky-400">
+          <Link href="/sobre" className="text-slate-300 hover:text-sky-400 transition-colors duration-300">
             Sobre
           </Link>
-        </div>
-      </nav>
+        </nav>
+      </div>
     </header>
   );
 }
