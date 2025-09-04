@@ -23,9 +23,9 @@ export default function Home() {
           <pre>
             <span className="text-sky-400">const</span> <span className="text-emerald-300">biomedData</span> = <span className="text-yellow-400">{'{'}</span>
             <br />
-            &nbsp;&nbsp;<span className="text-pink-400">datasets</span>: [<span className="text-green-400">'genomics'</span>, <span className="text-green-400">'medical_imaging'</span>, <span className="text-green-400">'ehr'</span>],
+            &nbsp;&nbsp;<span className="text-pink-400">datasets</span>: [<span className="text-green-400">&apos;genomics&apos;</span>, <span className="text-green-400">&apos;medical_imaging&apos;</span>, <span className="text-green-400">&apos;ehr&apos;</span>],
             <br />
-            &nbsp;&nbsp;<span className="text-pink-400">tools</span>: [<span className="text-green-400">'python'</span>, <span className="text-green-400">'r'</span>, <span className="text-green-400">'tensorflow'</span>],
+            &nbsp;&nbsp;<span className="text-pink-400">tools</span>: [<span className="text-green-400">&apos;python&apos;</span>, <span className="text-green-400">&apos;r&apos;</span>, <span className="text-green-400">&apos;tensorflow&apos;</span>],
             <br />
             &nbsp;&nbsp;<span className="text-pink-400">communitySize</span>: <span className="text-yellow-400">1000</span>,
             <br />
@@ -33,7 +33,7 @@ export default function Home() {
             <br /><br />
             <span className="text-orange-400">function</span> <span className="text-sky-400">getInnovations</span>(<span className="text-emerald-300">data</span>) <span className="text-yellow-400">{'{'}</span>
             <br />
-            &nbsp;&nbsp;<span className="text-green-400">console</span>.<span className="text-red-400">log</span>(<span className="text-green-400">'Building the future...'</span>);
+            &nbsp;&nbsp;<span className="text-green-400">console</span>.<span className="text-red-400">log</span>(<span className="text-green-400">&apos;Building the future...&apos;</span>);
             <br />
             <span className="text-yellow-400">{'}'}</span>;
           </pre>
