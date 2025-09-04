@@ -1,19 +1,17 @@
+// src/app/page.tsx
+
+import Hero from '@/components/layout/Hero';
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-br from-slate-900 to-slate-800 text-white p-8">
-      <div className="text-center animate-fadeIn">
-        <div className="bg-slate-800 p-10 rounded-2xl shadow-2xl border border-slate-700 max-w-2xl">
-          <h1 className="text-6xl font-extrabold tracking-tight sm:text-[6rem]">
-            <span className="text-sky-400">InfoBio</span>.com.br
-          </h1>
-          <p className="mt-6 text-xl sm:text-2xl text-slate-300">
-            A futura plataforma da Informática Biomédica no Brasil.
-          </p>
-          <button className="mt-10 px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-            Saiba Mais
-          </button>
-        </div>
-      </div>
-    </main>
+    <>
+      <Hero />
+      <section className="bg-slate-900 text-white py-16 px-8 text-center">
+        <h2 className="text-4xl font-bold tracking-tight text-sky-400">O que é Informática Biomédica?</h2>
+        <p className="mt-4 text-xl text-slate-300 max-w-4xl mx-auto">
+          A Informática Biomédica é a ponte entre a biologia, a medicina e a ciência da computação. É a área que utiliza tecnologias da informação para gerenciar, analisar e aplicar dados complexos para resolver problemas na saúde. Desde a gestão hospitalar até a pesquisa genética, a Informática Biomédica é a chave para a inovação.
+        </p>
+      </section>
+    </>
   );
 }
