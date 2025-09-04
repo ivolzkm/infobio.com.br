@@ -8,8 +8,8 @@ import Header from "@/components/layout/Header"; // 1. Importe o Header aqui
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "InfoBio.com.br",
-  description: "A plataforma da Informática Biomédica no Brasil",
+
+  description: "Informática Biomédica",
 };
 
 export default function RootLayout({
