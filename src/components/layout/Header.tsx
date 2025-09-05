@@ -19,6 +19,9 @@ export default function Header() {
           <Link href="/comunidade" className="text-slate-300 hover:text-sky-400 transition-colors duration-300">
             Comunidade
           </Link>
+          <Link href="/ferramentas" className="text-slate-300 hover:text-sky-400 transition-colors duration-300">
+            Ferramentas
+          </Link>
           <Link href="/newsletter" className="text-slate-300 hover:text-sky-400 transition-colors duration-300">
             Newsletter
           </Link>
