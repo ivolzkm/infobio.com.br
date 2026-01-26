@@ -37,12 +37,7 @@ export default function ConversorPage() {
 
     // Simulação de conversão para fins de demonstração do MVP
     const timestamp = new Date().toISOString();
-    const mockOutput = `LOCUS       Exported                ${processedSeq.length} bp    DNA     linear   PLN ${timestamp.split('T')[0]}
-DEFINITION  Sequence converted via InfoBio.com.br
-ACCESSION   INFOBIO_${Math.floor(Math.random() * 1000)}
-ORIGIN      
-      1 ${processedSeq.toLowerCase().match(/.{1,10}/g)?.join(' ') || processedSeq}
-//`;
+    const mockOutput = `LOCUS       Exported                ${processedSeq.length} bp    DNA     linear   PLN ${timestamp.split('T')[0]}\nDEFINITION  Sequence converted via InfoBio.com.br\nACCESSION   INFOBIO_${Math.floor(Math.random() * 1000)}\nORIGIN      \n      1 ${processedSeq.toLowerCase().match(/.{1,10}/g)?.join(' ') || processedSeq}\n//`;
     
     setResult(outFormat === 'GenBank' ? mockOutput : sequence);
   };
@@ -71,9 +66,8 @@ ORIGIN
               </label>
               <button 
                 onClick={() => fileInputRef.current?.click()}
-                className="text-xs font-semibold bg-slate-800 hover:bg-slate-700 text-slate-300 py-1 px-3 rounded-md border border-slate-700 transition-all flex items-center gap-2"
+                className="text-xs font-semibold bg-slate-800 hover:bg-sky-700 text-slate-300 py-1 px-3 rounded-md border border-slate-700 transition-all flex items-center gap-2"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
                 Upload .fasta / .gbk
               </button>
               <input type="file" ref={fileInputRef} onChange={handleFileUpload} className="hidden" accept=".fasta,.gbk,.txt"/>
@@ -117,7 +111,7 @@ ORIGIN
 
           <button 
             onClick={handleConvert}
-            className="w-full bg-sky-600 hover:bg-sky-500 text-white font-bold py-4 px-6 rounded-xl text-lg transition-all shadow-[0_0_20px_rgba(2,132,199,0.3)] active:scale-[0.98]"
+            className="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-4 px-6 rounded-xl text-lg transition-all shadow-[0_0_20px_rgba(2,132,199,0.3)] active:scale-[0.98]"
           >
             Executar Conversão
           </button>
