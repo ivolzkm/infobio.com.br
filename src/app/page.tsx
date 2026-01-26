@@ -13,7 +13,7 @@ export default function Home() {
           <p className="text-lg sm:text-xl text-slate-400 max-w-md">
             Unindo a ciência de dados com a saúde para construir o futuro da tecnologia biomédica no Brasil.
           </p>
-          <button className="px-8 py-4 bg-sky-500 hover:bg-sky-600 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
+          <button className="px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white font-bold rounded-full transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
             Saiba Mais
           </button>
         </div>
@@ -31,7 +31,7 @@ export default function Home() {
             <br />
             <span className="text-yellow-400">{'}'}</span>;
             <br /><br />
-            <span className="text-orange-400">function</span> <span className="text-sky-400">getInnovations</span>(<span className="text-emerald-300">data</span>) <span className="text-yellow-400">{'{'}</span>
+            <span className="text-orange-400">function</span> <span className="text-sky-400">getInnovations</span>(<span className="text-emerald-300">data</span>) <span className="text-yellow-400">{'}'}</span>
             <br />
             &nbsp;&nbsp;<span className="text-green-400">console</span>.<span className="text-red-400">log</span>(<span className="text-green-400">&apos;Building the future...&apos;</span>);
             <br />
