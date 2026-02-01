@@ -90,4 +90,4 @@ Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalh
 
 ---
 
-Feito com ❤️ por [Ivo Lozekam](https://github.com/ivolzkm) e pela comunidade.
+Feito com ❤️ por [ivolzkm](https://github.com/ivolzkm) e pela comunidade.

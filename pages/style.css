@@ -73,3 +73,21 @@ body {
 .social-links a:hover {
   background: #d2e3fc;
 }
+
+/* --- Animação do Cursor para o Terminal --- */
+.blinking-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1rem; /* Ajuste a altura para corresponder ao tamanho da fonte */
+  background-color: #a7a7a7; /* Cor do cursor */
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  from, to {
+    background-color: transparent;
+  }
+  50% {
+    background-color: #a7a7a7; /* Cor do cursor */
+  }
+}

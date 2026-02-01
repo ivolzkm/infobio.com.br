@@ -1,61 +1,46 @@
-import Head from "next/head";
-import Link from "next/link";
-import ThemeToggleButton from "../components/ThemeToggleButton";
-import { getPortalData } from "../lib/portalData";
+/**
+ * @file Renderiza a página inicial (landing page) do portal InfoBio com um design de terminal.
+ */
 
-function PortalCard({ card }) {
-  const isSoon = card.status === 'soon';
-  const cardClasses = `block p-8 rounded-2xl shadow-lg transition-all duration-300 ${
-    isSoon
-      ? 'bg-gray-200 dark:bg-gray-800/50 relative'
-      : 'bg-white dark:bg-gray-800 hover:shadow-2xl transform hover:-translate-y-1'
-  }`;
-  const titleClasses = `text-2xl font-bold mb-2 ${isSoon ? 'text-gray-500 dark:text-gray-400' : ''}`;
-  const descriptionClasses = `text-gray-600 ${isSoon ? 'dark:text-gray-500' : 'dark:text-gray-400'}`;
+import Head from 'next/head';
+import BotaoAlternarTema from '../components/ThemeToggleButton';
+import Terminal from '../components/Terminal';
+import { obterDadosDoPortal } from '../lib/portalData';
 
-  const cardContent = (
-    <div className={cardClasses}>
-      {isSoon && <div className="absolute top-2 right-2 bg-purple-500 text-white text-xs font-bold px-2 py-1 rounded-full">EM BREVE</div>}
-      <h2 className={titleClasses}>{card.title}</h2>
-      <p className={descriptionClasses}>{card.description}</p>
-    </div>
-  );
-
-  return isSoon ? cardContent : (
-    <Link href={card.href} legacyBehavior>
-      <a>{cardContent}</a>
-    </Link>
-  );
-}
-
-function PortalInfoBio({ data }) {
+/**
+ * Componente principal da página inicial.
+ *
+ * @param {{dados: object}} props As propriedades da página, recebidas de `getStaticProps`.
+ * @returns {JSX.Element}
+ */
+function PaginaInicial({ dados }) {
   return (
     <>
       <Head>
-        <title>{data.title}</title>
+        <title>{dados.title}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
+        <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;700;900&display=swap" rel="stylesheet" />
       </Head>
 
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-500">
+      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-100 transition-colors duration-500 font-sans">
         <div className="absolute top-4 right-4">
-          <ThemeToggleButton />
+          <BotaoAlternarTema />
         </div>
 
-        <header className="text-center py-16 sm:py-24">
-          <h1 className="text-5xl sm:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600">
-            {data.header.title}
+        <header className="text-center py-12 sm:py-20">
+          <h1 className="text-5xl sm:text-6xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-purple-600" style={{ fontFamily: "'Inter', sans-serif" }}>
+            {dados.header.title}
           </h1>
-          <p className="text-xl sm:text-2xl mt-4 text-gray-600 dark:text-gray-300">
-            {data.header.subtitle}
+          <p className="text-lg sm:text-xl mt-4 text-gray-600 dark:text-gray-300" style={{ fontFamily: "'Inter', sans-serif" }}>
+            {dados.header.subtitle}
           </p>
         </header>
 
         <main className="max-w-4xl mx-auto px-4 pb-16">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-center">
-            {data.cards.map((card) => (
-              <PortalCard key={card.title} card={card} />
-            ))}
-          </div>
+          {/* O componente Terminal substitui a antiga grade de cartões */}
+          <Terminal data={dados.cards} />
         </main>
 
         <footer className="text-center py-8 text-gray-500 dark:text-gray-400">
@@ -66,13 +51,19 @@ function PortalInfoBio({ data }) {
   );
 }
 
+/**
+ * Função do Next.js para buscar dados em tempo de build (Static Site Generation).
+ * Busca os dados do portal e os passa como props para o componente `PaginaInicial`.
+ *
+ * @returns {Promise<{props: {dados: object}}>}
+ */
 export async function getStaticProps() {
-  const data = getPortalData();
+  const dados = obterDadosDoPortal();
   return {
     props: {
-      data,
+      dados,
     },
   };
 }
 
-export default PortalInfoBio;
+export default PaginaInicial;
