@@ -1,2 +1,13 @@
-/node_modules
-/.next
+# Dependencies
+/vendor/
+
+# Environment
+.env
+
+# IDEs and editors
+.idea/
+.vscode/
+
+# Operating System files
+.DS_Store
+Thumbs.db
