@@ -1,34 +1,54 @@
+/**
+ * @file Renderiza a página do "Laboratório Digital" com a ferramenta interativa do Dogma Central.
+ */
+
 import Head from "next/head";
 import Link from "next/link";
-import ThemeToggleButton from "../../components/ThemeToggleButton";
+import BotaoAlternarTema from "../../components/ThemeToggleButton";
+import DogmaVisualizer from "../../components/DogmaVisualizer";
 
-function LaboratorioDigitalPage() {
+/**
+ * Componente para a página "Laboratório Digital".
+ *
+ * @returns {JSX.Element}
+ */
+function PaginaLaboratorioDigital() {
   return (
     <>
       <Head>
         <title>Laboratório Digital - InfoBio</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
-      <div className="min-h-screen bg-gray-100 dark:bg-gray-900 flex flex-col items-center justify-center p-4 transition-colors duration-500">
+      <div className="min-h-screen bg-gray-800 dark:bg-black text-white selection:bg-purple-500/50 selection:text-white">
         <div className="absolute top-4 right-4">
-          <ThemeToggleButton />
+          <BotaoAlternarTema />
         </div>
-        <div className="text-center">
-          <h1 className="text-4xl font-bold text-gray-800 dark:text-gray-100 mb-4">
-            Laboratório Digital
-          </h1>
-          <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
-            Este espaço está em construção. Volte em breve para experiências interativas!
-          </p>
-          <Link href="/ivolzkm" legacyBehavior>
-            <a className="text-blue-600 dark:text-blue-400 hover:underline">
-              &larr; Voltar ao portfólio de Ivo Lozekam
-            </a>
-          </Link>
+
+        <div className="p-4 sm:p-8">
+          <header className="text-center my-8">
+            <h1 className="text-4xl sm:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-green-400 to-blue-500 mb-2">
+              Laboratório Digital
+            </h1>
+            <p className="text-lg text-gray-300 max-w-2xl mx-auto">
+              Uma simulação interativa do Dogma Central da Biologia Molecular. Insira uma fita de DNA e veja a mágica acontecer.
+            </p>
+          </header>
+
+          <main className="flex flex-col items-center justify-center">
+            <DogmaVisualizer />
+          </main>
+
+          <footer className="text-center mt-12 mb-4">
+            <Link href="/ivolzkm" legacyBehavior>
+              <a className="text-blue-400 hover:underline">
+                &larr; Voltar ao portfólio de ivolzkm
+              </a>
+            </Link>
+          </footer>
         </div>
       </div>
     </>
   );
 }
 
-export default LaboratorioDigitalPage;
+export default PaginaLaboratorioDigital;
