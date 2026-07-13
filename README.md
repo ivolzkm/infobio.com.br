@@ -1,93 +1,74 @@
-# InfoBio - Comunidade de Informática Biomédica
+# InfoBio
 
-![Licença](https://img.shields.io/github/license/ivolzkm/infobio.com.br?style=for-the-badge)
-![PRs Bem-vindos](https://img.shields.io/badge/PRs-bem--vindos-brightgreen.svg?style=for-the-badge)
-![Next.js](https://img.shields.io/badge/Next-black?style=for-the-badge&logo=next.js&logoColor=white)
-![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+Plataforma técnica aberta para informática biomédica, interoperabilidade e soluções digitais em saúde.
 
-## Sobre o Projeto
+[Site](https://infobio.com.br) · [Issues](https://github.com/ivolzkm/infobio.com.br/issues)
 
-O **InfoBio** é um portal e uma comunidade open-source para estudantes, profissionais e entusiastas da área de Informática Biomédica. Nosso objetivo é criar um espaço para conectar mentes, compartilhar conhecimento e explorar a fascinante intersecção entre saúde e tecnologia.
+## Estado atual
 
-Este projeto nasceu da vontade de fortalecer a comunidade de Informática Biomédica, oferecendo um ponto de encontro onde a troca de ideias e a colaboração podem florescer.
+- Validador FHIR/RNDS: pré-validação local de JSON, estrutura FHIR R4 e regras selecionadas do perfil BRIndividuo-1.0.
+- Sequence Workbench: transcrição, tradução, complemento reverso e conteúdo GC de sequências de DNA.
+- Catálogo técnico: ferramentas disponíveis e propostas para o roadmap.
+- Comunidade: colaboração pública por issues e pull requests.
 
-## Funcionalidades Atuais
+O projeto não usa banco de dados e não persiste recursos clínicos. As ferramentas atuais processam os dados no navegador.
 
-- **Portal de Navegação:** Uma página inicial que centraliza o acesso a todas as seções do site.
-- **Página de Portfólio:** Uma seção dedicada para apresentar os desenvolvedores e seus projetos.
-- **Tema Claro e Escuro:** Um seletor de tema para uma experiência de visualização mais confortável.
+## Arquitetura
 
-## 🗺️ Roadmap de Desenvolvimento
+- Next.js 16 com App Router
+- React 19 e TypeScript estrito
+- Tailwind CSS 3
+- Vitest para regras de domínio
+- Vercel para hospedagem
+- Node.js 24 LTS
 
-O futuro do InfoBio é promissor e você pode fazer parte dele! Nossos próximos passos incluem:
+O validador atual é intencionalmente limitado. Ele não executa todas as StructureDefinitions, invariantes FHIRPath, validações terminológicas ou dependências de pacotes. A integração futura prevê um serviço stateless separado baseado no validador oficial/HAPI FHIR.
 
-- [ ] **Laboratório Digital:** Uma seção com experiências interativas para explorar conceitos de saúde e tecnologia.
-- [ ] **Blog:** Um espaço para artigos, notícias e tutoriais sobre o universo da Informática Biomédica.
-- [ ] **Comunidade:** Funcionalidades para conectar estudantes e profissionais, como um fórum ou um diretório de membros.
-- [ ] **Páginas de Conteúdo:** Adicionar mais conteúdo educacional e informativo.
+## Desenvolvimento local
 
-## 🚀 Tecnologias Utilizadas
+Requisitos: Node.js 24 e npm 11.
 
-Este projeto é construído com tecnologias modernas e eficientes:
-
-- **[Next.js](https://nextjs.org/):** Um framework React para produção.
-- **[React](https://reactjs.org/):** Uma biblioteca JavaScript para construir interfaces de usuário.
-- **[Tailwind CSS](https://tailwindcss.com/):** Um framework de CSS utilitário para um design rápido e customizável.
-
-## 🏁 Começando
-
-Você quer contribuir para o InfoBio? Ótimo! Siga os passos abaixo para configurar o ambiente de desenvolvimento local.
-
-1.  **Faça um Fork do Repositório**
-    Clique no botão "Fork" no canto superior direito desta página.
-
-2.  **Clone o seu Fork**
-    ```bash
-    git clone https://github.com/SEU_USUARIO/infobio.com.br.git
+    git clone https://github.com/ivolzkm/infobio.com.br.git
     cd infobio.com.br
-    ```
-
-3.  **Instale as Dependências**
-    ```bash
-    npm install
-    ```
-
-4.  **Rode o Servidor de Desenvolvimento**
-    ```bash
+    npm ci
     npm run dev
-    ```
 
-Agora você pode abrir [http://localhost:3000](http://localhost:3000) no seu navegador e ver o projeto em ação!
+A aplicação estará disponível em http://localhost:3000.
 
-## 🤝 Como Contribuir
+## Verificação
 
-Contribuições são o que tornam a comunidade open-source um lugar incrível para aprender, inspirar e criar. Qualquer contribuição que você fizer será **muito apreciada**.
+    npm run check
 
-1.  **Crie uma Nova Branch**
-    ```bash
-    git checkout -b feature/SuaNovaFeature
-    ```
+O comando executa lint, verificação de tipos, testes e build de produção. Os comandos também podem ser executados separadamente:
 
-2.  **Faça suas Alterações**
-    Adicione suas novas funcionalidades, corrija bugs ou melhore a documentação.
+    npm run lint
+    npm run typecheck
+    npm test
+    npm run build
 
-3.  **Faça o Commit das suas Alterações**
-    ```bash
-    git commit -m 'feat: Adiciona uma nova feature incrível'
-    ```
+## Rotas principais
 
-4.  **Envie para a sua Branch**
-    ```bash
-    git push origin feature/SuaNovaFeature
-    ```
+- /ferramentas/validador-fhir-rnds
+- /ferramentas/sequence-workbench
+- /ferramentas
+- /projetos
+- /comunidade
+- /sobre
 
-5.  **Abra um Pull Request**
-    Vá para o repositório original no GitHub e abra um novo Pull Request. Descreva suas alterações e aguarde a revisão.
+## Segurança e privacidade
 
-## 📄 Licença
+Não use dados reais ou identificáveis de pacientes em exemplos, issues, testes ou demonstrações. Casos de reprodução devem ser completamente sintéticos.
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+Achados de segurança não devem ser publicados com dados sensíveis. Abra inicialmente uma issue apenas com contexto não sensível para combinar um canal adequado com o mantenedor.
 
----
+## Contribuição
 
-Feito com ❤️ por [ivolzkm](https://github.com/ivolzkm) e pela comunidade.
+1. Abra ou associe a mudança a uma issue.
+2. Crie uma branch específica.
+3. Inclua testes quando alterar regras de domínio.
+4. Execute npm run check.
+5. Abra um pull request com escopo, limitações e evidências de validação.
+
+## Licença
+
+[MIT](LICENSE) © Ivo Ricardo Lozekam Junior.
