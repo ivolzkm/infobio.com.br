@@ -1,46 +1,51 @@
 {
-  "name": "ivolzkm",
-  "version": "1.0.0",
+  "name": "infobio",
+  "version": "0.2.0",
   "private": true,
-  "description": "",
-  "homepage": "https://github.com/ivolzkm/meu-projeto-next#readme",
+  "description": "Plataforma técnica aberta para informática, interoperabilidade e soluções digitais em saúde.",
+  "homepage": "https://infobio.com.br",
   "bugs": {
-    "url": "https://github.com/ivolzkm/meu-projeto-next/issues"
+    "url": "https://github.com/ivolzkm/infobio.com.br/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ivolzkm/meu-projeto-next.git"
+    "url": "git+https://github.com/ivolzkm/infobio.com.br.git"
   },
   "license": "MIT",
-  "author": "",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint . --max-warnings=0",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
-    "next": "15.4.10",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
-  },
-  "optionalDependencies": {
-    "@next/swc-darwin-arm64": "15.4.5",
-    "@next/swc-darwin-x64": "15.4.5",
-    "@next/swc-linux-arm64-gnu": "15.4.5",
-    "@next/swc-linux-arm64-musl": "15.4.5",
-    "@next/swc-linux-x64-gnu": "15.4.5",
-    "@next/swc-linux-x64-musl": "15.4.5",
-    "@next/swc-win32-arm64-msvc": "15.4.5",
-    "@next/swc-win32-x64-msvc": "15.4.5",
-    "sharp": "^0.34.3"
+    "lucide-react": "^1.24.0",
+    "next": "16.2.10",
+    "react": "19.2.7",
+    "react-dom": "19.2.7",
+    "zod": "^4.4.3"
   },
   "engines": {
-    "node": "20.x"
+    "node": ">=24 <25"
+  },
+  "packageManager": "npm@11.9.0",
+  "overrides": {
+    "postcss": "^8.5.10"
   },
   "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
     "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "tailwindcss": "^3.4.17"
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.2.10",
+    "postcss": "^8.5.10",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.10"
   }
 }
